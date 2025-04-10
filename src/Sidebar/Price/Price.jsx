@@ -4,7 +4,7 @@ import './Price.css'
 const Price = () => {
   return (
     <div>
-      
+      Price
     </div>
   )
 }
