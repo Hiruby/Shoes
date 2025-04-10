@@ -18,3 +18,10 @@ input {
     position: relative;
     width: 14rem;
 }
+
+.nav-icons {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 2rem;
+    color: #494949
+  }
