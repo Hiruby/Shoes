@@ -1,25 +1,16 @@
 import React from 'react'
 import './Colors.css'
+import  Input from '../../components/Input.jsx'
 
 const Colors = () => {
   return (
     <div>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>All
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>Black
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>Blue
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>All
-      </label>
+      <h2 className="sidebar-title color-title">Colors</h2>
+      <Input />
+      <Input />
+      <Input />
+      <Input />
+      <Input />
     </div>
   )
 }
