@@ -3,6 +3,8 @@ import Navigation from "./Navigation/Nav";
 import Products from './Products/Products';
 import Recommended from './Recommended/Recommended';
 import Sidebar from './Sidebar/Sidebar';
+import Card from './components/Card';
+import '/index.css'
 
 //Database
 import products from './db/data'
@@ -12,12 +14,12 @@ function App() {
   const [query, setQuery] = useState("");
 
   //------------Input Filter------------
-  const handleInputChange = event => {
-    setQuery(event.target.value)
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
   }
 
-  const filteredItems = products.filter( product => product.title.
-    toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
+  const filteredItems = products.filter( products => products.title.
+    toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1
   );
 
   //------------Radio Filter------------
@@ -44,8 +46,8 @@ function App() {
           category === selected || 
           color === selected || 
           company === selected || 
-          newPrice ===selected || 
-          title ===selected
+          newPrice == selected || 
+          title === selected
       )
     }
 
@@ -61,12 +63,14 @@ function App() {
     ));
   }
 
+  const result = filteredData(products, selectedCategory, query);
+
   return (
     <>
-      <Sidebar />
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Sidebar handleChange={handleChange} />
+      <Navigation query={query} handleInputChange={handleInputChange} />
+      <Recommended handleClick={handleClick} />
+      <Products result={result} />
     </>
   )
 }
